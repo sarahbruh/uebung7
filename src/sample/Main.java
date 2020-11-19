@@ -1,10 +1,14 @@
+/**
+ * uebung 7 & 8
+ * @author Brunmayr Sarah
+ * @version 12.0.1, 19.11.2020
+ */
 package sample;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 public class Main extends Application {
@@ -17,7 +21,6 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);
