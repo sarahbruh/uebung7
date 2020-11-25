@@ -5,7 +5,7 @@
  */
 package sample;
 
-public class CurrencyConvert {
+public class CurrencyConvert extends Currency{
 
     public double euroToYen(double euro){
 
@@ -13,7 +13,7 @@ public class CurrencyConvert {
 
         return ergebnis;
     }
-    public double EuroToUSD(double euro1){
+    public double EuroTo(double euro1){
 
         double ergebnis1 = euro1 * 1.18;
 

@@ -7,4 +7,5 @@ package sample;
 
 public class Currency {
 
+    public double sign;
 }

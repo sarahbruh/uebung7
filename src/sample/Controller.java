@@ -17,7 +17,7 @@ public class Controller extends CurrencyConvert{
     @FXML public TextField textField = new TextField();
     @FXML public TextField textField2 = new TextField();
 
-    @FXML public ChoiceBox cb = new ChoiceBox();
+    @FXML public ChoiceBox<String> cb = new ChoiceBox();
 
     @FXML Button btn = new Button();
 
@@ -42,7 +42,7 @@ public class Controller extends CurrencyConvert{
 
                 cb.getItems().add("USD");
                 cb.getItems().add("Yen");
-                String value = (String) cb.getValue(); //lesen, was in da choicebox ausgewählt is
+                String value = (String) cb.getValue(); //lesen, was in da choicebox ausgewählt ist
             }
         };
         cb.addEventHandler(MouseEvent.MOUSE_CLICKED, handler_choicebox);
