@@ -5,18 +5,31 @@
  */
 package sample;
 
-public class CurrencyConvert extends Currency{
+import java.util.ArrayList;
 
-    public double euroToYen(double euro){
+public class CurrencyConvert{
 
-        double ergebnis = euro * 124;
+    ArrayList<Currency> al = new ArrayList<Currency>();
 
-        return ergebnis;
+    public CurrencyConvert() {
+        al.add(new Currency("USD", 1.19));
+        al.add(new Currency("Yen", 124));
     }
-    public double EuroTo(double euro1){
 
-        double ergebnis1 = euro1 * 1.18;
+    public double euroTo(double y, String x){
 
-        return ergebnis1;
+        Currency currency = null;
+
+        for (int i = 0; i < al.size(); i++){
+            if (al.get(i).getSign().equals(x)){
+                currency = al.get(i);
+            }
+        }
+        return y * currency.getValue();
+    }
+
+    public String getName(int z){
+
+        return al.get(z).getSign();
     }
 }

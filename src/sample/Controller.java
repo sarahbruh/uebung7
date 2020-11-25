@@ -7,12 +7,16 @@ package sample;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-public class Controller extends CurrencyConvert{
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
 
     @FXML public TextField textField = new TextField();
     @FXML public TextField textField2 = new TextField();
@@ -20,6 +24,8 @@ public class Controller extends CurrencyConvert{
     @FXML public ChoiceBox<String> cb = new ChoiceBox();
 
     @FXML Button btn = new Button();
+
+    private CurrencyConvert currencyConvert;
 
     public void doConvertion(){
 
@@ -29,22 +35,23 @@ public class Controller extends CurrencyConvert{
 
                 double eingabe = Double.parseDouble(textField.getText());
 
-                textField2.setText(String.valueOf(euroToYen(eingabe)));
+                String v = cb.getValue();
 
+                double euroTo = currencyConvert.euroTo(eingabe, v);
+
+                textField2.setText(String.valueOf(euroTo));
             }
         };
+        btn.addEventHandler(MouseEvent.MOUSE_CLICKED, handler);
     }
-    public void ChoiceBox(){
 
-        EventHandler<MouseEvent> handler_choicebox = new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
 
-                cb.getItems().add("USD");
-                cb.getItems().add("Yen");
-                String value = (String) cb.getValue(); //lesen, was in da choicebox ausgewählt ist
-            }
-        };
-        cb.addEventHandler(MouseEvent.MOUSE_CLICKED, handler_choicebox);
+        currencyConvert = new CurrencyConvert();
+
+        for (int i = 0; i < currencyConvert.al.size(); i++){
+            cb.getItems().addAll(currencyConvert.getName(i));
+        }
     }
 }

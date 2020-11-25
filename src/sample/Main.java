@@ -1,8 +1,3 @@
-/**
- * uebung 7 & 8
- * @author Brunmayr Sarah
- * @version 12.0.1, 19.11.2020
- */
 package sample;
 
 import javafx.application.Application;
@@ -10,6 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+/**
+ * uebung 7 & 8
+ * @author Brunmayr Sarah
+ * @version 12.0.1, 19.11.2020
+ */
 
 public class Main extends Application {
 
